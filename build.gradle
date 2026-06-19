@@ -1,20 +1,14 @@
 plugins {
-    // Adds `run` and friends; also brings Java support needed to compile/run.
     id 'application'
 }
 
-// Maven coordinates (mainly for future publishing / consistency)
 group = 'net.atatat'
-version = '0.1.0'
+version = '0.2.0'
 
 repositories {
-    // Keep it, even if you have no external deps right now.
     mavenCentral()
 }
 
-// IMPORTANT PART:
-// Tell Gradle: "My Java sources live directly under the project root,
-// but only under net/** (so Gradle doesn't try to compile random files)."
 sourceSets {
     main {
         java {
@@ -28,13 +22,8 @@ sourceSets {
 }
 
 application {
-    // Default main class (used when -PmainClass is not provided)
     def defaultMain = 'net.atatat.s01_basictypes.ss01_int_types.Main'
-
-    // CLI override:
     def cliMain = project.findProperty('mainClass')
-
-    // Use override if present; otherwise default
     mainClass = (cliMain != null && cliMain.toString().trim())
             ? cliMain.toString().trim()
             : defaultMain
