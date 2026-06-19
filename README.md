@@ -1,4 +1,4 @@
-# Java Study
+# Advanced Java
 
 Example run:
 
