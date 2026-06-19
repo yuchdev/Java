@@ -1,0 +1,2 @@
+// Smallest possible Gradle build definition
+rootProject.name = 'java-study'
